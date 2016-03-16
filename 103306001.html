@@ -10,8 +10,10 @@
   position: absolute;
   top: 0; left: 0; bottom: 10; right: 0;
   width: 100%;
+
   display: table;
   height: auto;
+
   color: #fcfcfc;
   text-transform: uppercase;
   text-align: center;
@@ -19,9 +21,51 @@
   font-size: 5em;
   font-family: 'Lobster', cursive;
   font-weight: 800;
+
   letter-spacing: -0.02em;
   line-height: 1.2em;
+  -webkit-animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  -webkit-animation-name: slidein;
+  -moz-animation-name: slidein;
 }
+
+@-webkit-keyframes slidein {
+  from {
+    padding-left: 100%;
+    width: 300%;
+  }
+
+  75% {
+  font-size: 200%;
+  padding-left: 25%;
+  width: 150%;
+}
+  
+  to {
+    padding-left: 0%;
+    width: 100%;
+  }
+}
+
+@-moz-keyframes slidein {
+  from {
+    padding-left: 100%;
+    width: 300%;
+  }
+  75% {
+  font-size: 300%;
+  padding-left: 25%;
+  width: 150%;
+}
+
+  to {
+    padding-left: 0%;
+    width: 100%;
+  }
+}
+
+
 .button {
    position:relative; 
     top:500; 
@@ -67,7 +111,9 @@
     bottom 0;
     left:0; 
     right:0;
+
 }
+
  .timer-wrapper {
   position: absolute;
   top: 0;
@@ -78,12 +124,14 @@
   background-color: #000;
   color: #fff;
 }
+
 .timer-wrapper > ul {
   height: 100%;
   width: 100%;
   display: block;
   margin: 0 auto;
 }
+
 .timer-wrapper > ul > li {
   position: absolute;
   top: 50%;
@@ -96,6 +144,7 @@
   border-radius: 500px;
   transition: all 0.5s ease;
 }
+
 .timer-wrapper > ul > li:last-child {
   position: absolute;
   top: 50%;
@@ -113,6 +162,7 @@
   box-shadow: 0px 0px 30px rgba(255, 0, 0, 0.6) ;
   animation: pulseShadow 5s infinite linear;
 }
+
 .timer-wrapper > ul > li:last-child::after {
   content: '';
   border-radius: 200px;
@@ -125,6 +175,7 @@
   background-color: transparent;
   box-shadow: inset 0px 0px 30px rgba(255, 0, 0, 0.6);
 }
+
 .timer-wrapper > ul > li:nth-child(4) {
   margin-left: -170px;
   margin-top: -170px;
@@ -136,6 +187,7 @@
   box-shadow: inset 0px 0px 25px rgba(255, 0, 0, 0.6);
   animation: spinBG3 8s infinite linear;
 }
+
 .timer-wrapper > ul > li:nth-child(3) {
   margin-left: -150px;
   margin-top: -150px;
@@ -146,6 +198,7 @@
   box-shadow: inset 0px 0px 25px rgba(255, 0, 0, 0.6);
   animation: spinBG 12s infinite linear;
 }
+
 .timer-wrapper > ul > li:nth-child(2) {
   margin-left: -137px;
   margin-top: -137px;
@@ -157,6 +210,7 @@
   box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.6);
   animation: spinBG2 2s infinite linear;
 }
+
 .timer-wrapper > ul > li:first-child {
   margin-left: -130px;
   margin-top: -130px;
@@ -166,6 +220,7 @@
   border-width: 10px;
   animation: spinBG 5s infinite linear;
 }
+
 #num {
   position: absolute;
   top: 55%;
@@ -175,9 +230,12 @@
   margin-top: -7%;
   font-size: 120px;
 }
+
+
 /*-------------------------------------------
 		 Animations
 		-------------------------------------------*/
+
 @keyframes pulseGlow {
   0% {
     text-shadow: 0px 0px 20px rgba(23, 246, 251, 0.75);
@@ -189,6 +247,7 @@
     text-shadow: 0px 0px 20px rgba(23, 246, 251, 0.75);
   }
 }
+
 @keyframes pulseShadow {
   0% {
     box-shadow: 0px 0px 30px rgba(23, 246, 251, 0.25);
@@ -200,6 +259,7 @@
     box-shadow: 0px 0px 30px rgba(23, 246, 251, 0.25);
   }
 }
+
 @keyframes spinBG {
   0% {
     transform: rotate(0deg);
@@ -208,6 +268,7 @@
     transform: rotate(360deg);
   }
 }
+
 @keyframes spinBG2 {
   0% {
     transform: rotate(360deg);
@@ -222,6 +283,7 @@
     box-shadow: 0px 0px 1px rgba(23, 246, 251, 0.5);
   }
 }
+
 @keyframes spinBG3 {
   0% {
     transform: rotate(180deg);
@@ -239,6 +301,12 @@
 <body>
 
   <h1 id="headline" class="demo-text"align="center" >Timer</h1>
+  
+ 
+  
+  <br>
+  <br>
+  <br>
   <br>
   <br>
   <br>
@@ -253,6 +321,24 @@
                 <li></li>
             </ul>
         </div>
+  
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br><br><br><br><br><br>
   <button id="start" class="button" onclick="start()" >start</button>
   <button id="stop" class="button" onclick="stop()">stop</button>
   <button class="button" onclick="restart()">Restart</button>
@@ -260,45 +346,65 @@
 
 <script id="jsbin-javascript">
 var time = false;
+
+
 function minus() {
     if (document.getElementById("num")) {
         var curr = parseInt(document.getElementById("num").innerHTML);
     }
+
     if (curr && curr <= 60 && time === true) {
         if (curr <= 10) {
            
             document.getElementById("num").innerHTML = "0" + (curr - 1);
+
         } else {
             document.getElementById("num").innerHTML = curr - 1;
         }
     } else if (curr === 0) {
        
-        document.getElementById("num").innerHTML = "你好棒";
+        document.getElementById("num").innerHTML = "你好棒呦";
     }
+
     setTimeout(function() {
         minus();
     }, 1000);
+
+
 }
 minus();
+
 function start() {
     time = true;
 }
+
 function stop() {
+
     time = false;
 }
 function restart() {
         document.getElementById("num").innerHTML = 60;
     }
+
+
 function joke() {
     var person = prompt("Please enter your name");
     var timer = prompt("Please enter the current value of timer");
   if (person != null && timer != null) {
      var a;
          a = 60-timer;
-        document.getElementById("num").innerHTML =
-        "Congratulations " + person + "! You totally wasted "+ a +" seconds on this junk! >< ";
+      
+      alert(  "恭喜你" + person + "! 你總共浪費了 "+ a +"秒在這程式上 >< ");
+    
+    alert("以為完了嗎？");
+    alert("其實還沒有");
+    alert("當你遇到這些小視窗時又有一段時間過去了");
+    alert("猜猜看還有多少個視窗");
+    alert("好啦這真的是最後一個了！");
+    
     }
 }
+
 </script>
 
 
@@ -321,6 +427,45 @@ function joke() {
 
   letter-spacing: -0.02em;
   line-height: 1.2em;
+  -webkit-animation-duration: 3s;
+  -moz-animation-duration: 3s;
+  -webkit-animation-name: slidein;
+  -moz-animation-name: slidein;
+}
+
+@-webkit-keyframes slidein {
+  from {
+    padding-left: 100%;
+    width: 300%;
+  }
+
+  75% {
+  font-size: 200%;
+  padding-left: 25%;
+  width: 150%;
+}
+  
+  to {
+    padding-left: 0%;
+    width: 100%;
+  }
+}
+
+@-moz-keyframes slidein {
+  from {
+    padding-left: 100%;
+    width: 300%;
+  }
+  75% {
+  font-size: 300%;
+  padding-left: 25%;
+  width: 150%;
+}
+
+  to {
+    padding-left: 0%;
+    width: 100%;
+  }
 }
 
 
@@ -556,43 +701,62 @@ function joke() {
 }</script>
 
 <script id="jsbin-source-javascript" type="text/javascript">var time = false;
+
+
 function minus() {
     if (document.getElementById("num")) {
         var curr = parseInt(document.getElementById("num").innerHTML);
     }
+
     if (curr && curr <= 60 && time === true) {
         if (curr <= 10) {
            
             document.getElementById("num").innerHTML = "0" + (curr - 1);
+
         } else {
             document.getElementById("num").innerHTML = curr - 1;
         }
     } else if (curr === 0) {
        
-        document.getElementById("num").innerHTML = "你好棒";
+        document.getElementById("num").innerHTML = "你好棒呦";
     }
+
     setTimeout(function() {
         minus();
     }, 1000);
+
+
 }
 minus();
+
 function start() {
     time = true;
 }
+
 function stop() {
+
     time = false;
 }
 function restart() {
         document.getElementById("num").innerHTML = 60;
     }
+
+
 function joke() {
     var person = prompt("Please enter your name");
     var timer = prompt("Please enter the current value of timer");
   if (person != null && timer != null) {
      var a;
          a = 60-timer;
-        document.getElementById("num").innerHTML =
-        "Congratulations " + person + "! You totally wasted "+ a +" seconds on this junk! >< ";
+      
+      alert(  "恭喜你" + person + "! 你總共浪費了 "+ a +"秒在這程式上 >< ");
+    
+    alert("以為完了嗎？");
+    alert("其實還沒有");
+    alert("當你遇到這些小視窗時又有一段時間過去了");
+    alert("猜猜看還有多少個視窗");
+    alert("好啦這真的是最後一個了！");
+    
     }
 }
 </script></body>
